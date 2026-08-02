@@ -30,50 +30,7 @@ tailwind.config = {
 }
 </script>
 
-<style>
-*,*::before,*::after{box-sizing:border-box}
-html,body{font-family:'DM Sans',sans-serif}
-h1,h2,h3,h4,h5,h6{font-family:'PT Sans',sans-serif}
-body{transition:background-color .3s,color .3s}
-
-/* noise overlay */
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.35;
-background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E")}
-
-/* scrollbar */
-::-webkit-scrollbar{width:5px}
-::-webkit-scrollbar-track{background:transparent}
-::-webkit-scrollbar-thumb{background:#FF6B2B;border-radius:99px}
-
-/* reveal on scroll */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
-.reveal.in{opacity:1;transform:none}
-.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
-
-/* nav underline animation */
-.nl{position:relative}
-.nl::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1.5px;background:currentColor;transition:width .22s cubic-bezier(.4,0,.2,1)}
-.nl:hover::after,.nl.on::after{width:100%}
-.nl.on{font-weight:500}
-
-/* shimmer button */
-.shimmer{position:relative;overflow:hidden}
-.shimmer::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:rgba(255,255,255,.18);transform:skewX(-20deg);transition:left .4s cubic-bezier(.4,0,.2,1)}
-.shimmer:hover::after{left:160%}
-
-/* photo frames */
-.pf{overflow:hidden;background:#d4d4d8}
-.pf img{width:100%;height:100%;object-fit:cover;display:block}
-
-/* card hover */
-.card-h{transition:transform .28s cubic-bezier(.4,0,.2,1),border-color .18s}
-.card-h:hover{transform:translateY(-4px)}
-
-/* skill tag */
-.stag{transition:border-color .18s}
-
-[x-cloak]{display:none!important}
-</style>
+<style tyrpe="text/css" src="./assets/css/style.css"></style>
 </head>
 
 <body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased">
@@ -168,7 +125,7 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
       <div class="reveal d2 flex justify-center md:justify-end">
         <div class="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
           <div class="pf w-full h-full rounded-3xl">
-            <img src="./assets/profile-pic.jpg" alt="Karthik — Full Stack Software Engineer" loading="eager">
+            <img src="./assets/profile-pic.jpg" alt="Karthik — Full Stack Software Engineer" loading="eager" class="relative h-72 md:h-80 lg:h-96">
           </div>
           <div class="absolute -bottom-4 -left-4 bg-accent text-white font-display font-bold text-sm px-4 py-2.5 rounded-2xl shadow-lg">Open to projects</div>
         </div>
@@ -543,7 +500,7 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
   </div>
 </footer>
 
-<script src="./js/custom.js"></script>
+<script src="./assets/js/custom.js"></script>
 
 </body>
 </html>
